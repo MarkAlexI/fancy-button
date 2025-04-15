@@ -9,31 +9,40 @@
 
 <body>
   <template id="fancy-button-template">
-  <style>
-    button {
-      background: linear-gradient(to right, #ff7e5f, #feb47b);
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    
-    button:hover {
-      transform: scale(1.05);
-    }
-  </style>
-  <button>
-    <slot>Click me</slot>
-  </button>
-</template>
-
-<fancy-button label="Done">Submit</fancy-button>
-<fancy-button>Buy Now</fancy-button>
-
-<script src="./dist/fancy-button.js" type="text/javascript" charset="utf-8"></script>
+    <style>
+      button {
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      
+      button:hover {
+        transform: scale(1.05);
+      }
+    </style>
+    <button>
+      <slot>Click me</slot>
+    </button>
+  </template>
+  
+  <fancy-button label="Done">Submit</fancy-button>
+  <fancy-button>Buy Now</fancy-button>
+  <fancy-button label="Send"></fancy-button>
+  
+  <script>
+    document.querySelectorAll('fancy-button').forEach((el) => {
+      el.addEventListener('fancy-click', (e) => {
+        console.log(e.detail.message);
+      })
+    });
+  </script>
+  
+  <script src="./dist/fancy-button.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

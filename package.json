@@ -1,6 +1,6 @@
 {
   "name": "fancy-button",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Custom HTML button with shadow DOM, theme, accessibility and animation",
   "main": "dist/fancy-button.js",
   "keywords": [

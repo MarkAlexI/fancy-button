@@ -26,6 +26,16 @@ class FancyButton extends HTMLElement {
       }));
     });
   }
+  
+  static get observedAttributes() {
+    return ['label'];
+  }
+  
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === 'value' && this.button) {
+      this.button.textContent = newValue;
+    }
+  }
 }
 
 customElements.define('fancy-button', FancyButton);
